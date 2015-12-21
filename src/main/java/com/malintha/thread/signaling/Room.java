@@ -13,9 +13,10 @@ public class Room {
         new Thread(new FireAlarm(fireMessage)).start();
         
         //waiting threads on fire thread
-        new Thread(new FireChecker(fireMessage)).start();
         new Thread(new FireLights(fireMessage)).start();
         new Thread(new WaterPump(fireMessage)).start();
+        //make fire
+        new Thread(new FireChecker(fireMessage)).start();
 
     }
 }
